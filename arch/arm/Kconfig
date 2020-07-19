@@ -751,6 +751,13 @@ config ARCH_S5PC1XX
 	select DM_SERIAL
 	imply CMD_DM
 
+config ARCH_S5L8930
+        bool "Samsung S5L8930"
+        select CPU_V7A
+        select DM
+        select DM_SERIAL
+        imply CMD_DM
+
 config ARCH_HIGHBANK
 	bool "Calxeda Highbank"
 	select CPU_V7A
@@ -1823,6 +1830,8 @@ source "arch/arm/mach-qemu/Kconfig"
 source "arch/arm/mach-rockchip/Kconfig"
 
 source "arch/arm/mach-s5pc1xx/Kconfig"
+
+source "arch/arm/mach-s5l8930/Kconfig"
 
 source "arch/arm/mach-snapdragon/Kconfig"
 

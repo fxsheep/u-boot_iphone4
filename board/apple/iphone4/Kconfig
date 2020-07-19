@@ -1,0 +1,12 @@
+if TARGET_IPHONE_4
+
+config SYS_BOARD
+  default "iphone4"
+
+config SYS_VENDOR
+  default "apple"
+
+config SYS_CONFIG_NAME
+  default "iphone4"
+
+endif

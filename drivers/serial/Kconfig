@@ -475,6 +475,11 @@ config DEBUG_UART_NS16550_CHECK_ENABLED
 	  Note that this does not work for every ns16550-compatible UART and
 	  so has to be enabled carefully or you might notice lost characters.
 
+config S5L_UART
+        bool "S5L UART support"
+        help
+          Select this to enable UART for S5L.
+
 config ALTERA_JTAG_UART
 	bool "Altera JTAG UART support"
 	depends on DM_SERIAL

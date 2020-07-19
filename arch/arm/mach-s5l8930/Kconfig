@@ -1,0 +1,18 @@
+if ARCH_S5L8930
+
+choice
+	prompt "S5L8930 board select"
+	optional
+
+config TARGET_IPHONE_4
+	bool "Support Apple iPhone 4"
+	select OF_CONTROL
+
+endchoice
+
+config SYS_SOC
+	default "s5l8930"
+
+source "board/apple/iphone4/Kconfig"
+
+endif

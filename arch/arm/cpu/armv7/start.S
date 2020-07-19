@@ -36,6 +36,26 @@
 #endif
 
 reset:
+#ifdef CONFIG_ARCH_S5L8930
+    /* Check sure we're at the right load address */
+    ldr    r0, =reset
+    adr    r1, reset
+    cmp    r0, r1
+    beq    L_relocated
+
+    mov    r2, #(1 * 512 * 1024)	// HACK
+L_relocate_loop:
+    ldr    r3, [r1], #4
+    str    r3, [r0], #4
+    subs   r2, r2, #4
+    bgt    L_relocate_loop
+
+    /* We're done relocating, jump back into the image. */
+    ldr    r0, =reset
+    bx     r0
+
+L_relocated:
+#endif
 	/* Allow the board to save important registers */
 	b	save_boot_params
 save_boot_params_ret:
@@ -88,7 +108,6 @@ switch_to_hypervisor_ret:
 	bl	cpu_init_crit
 #endif
 #endif
-
 	bl	_main
 
 /*------------------------------------------------------------------------------*/

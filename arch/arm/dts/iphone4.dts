@@ -1,0 +1,16 @@
+/dts-v1/;
+/* #include "skeleton.dtsi" */
+
+/ {
+
+	model = "Apple iPhone 4";
+	compatible = "apple,s5l8930";
+	aliases {
+		console = "/serial@82500000";
+	};
+
+	serial@82500000 {
+		compatible = "samsung,s5l-uart";
+		reg = <0x82500000 0x1000>;
+	};
+};
