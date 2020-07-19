@@ -45,7 +45,6 @@ void *video_hw_init(void)
 	gdev.winSizeY = ((*(uint32_t*)S5L8930X_DP_FB_SIZE) & 0x0000FFFF) >> 0;
 	gdev.gdfBytesPP = 4;
 	gdev.gdfIndex = GDF_32BIT_X888RGB;
-	memset((void *)gdev.frameAdrs, 0, 960 * 640 * 4);
 	return (void *) &gdev;
 }
 
