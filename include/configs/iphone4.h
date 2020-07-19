@@ -16,6 +16,12 @@
 
 #ifdef CONFIG_VIDEO
 #define CONFIG_VIDEO_LOGO
+
+#define CONFIG_EXTRA_ENV_SETTINGS \
+ "stdin=serial\0" \
+ "stdout=serial,vga\0" \
+ "stderr=serial,vga\0"
+
 /* functions for cfb_console */
 #define VIDEO_KBD_INIT_FCT		a4_kp_init()
 #define VIDEO_TSTC_FCT			a4_kp_tstc
