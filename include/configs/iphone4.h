@@ -15,7 +15,7 @@
 #define CONFIG_SYS_SDRAM_BASE		0x40000000
 
 #ifdef CONFIG_VIDEO
-
+#define CONFIG_VIDEO_LOGO
 /* functions for cfb_console */
 #define VIDEO_KBD_INIT_FCT		a4_kp_init()
 #define VIDEO_TSTC_FCT			a4_kp_tstc
@@ -25,7 +25,6 @@ int a4_kp_init(void);
 int a4_kp_tstc(void);
 int a4_kp_getc(void);
 #endif
-
 #endif
 
 #endif /* !__IPHONE_4_CONFIG_H */
