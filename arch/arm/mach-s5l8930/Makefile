@@ -6,4 +6,4 @@
 # (C) Copyright 2008
 # Guennadi Liakhovetki, DENX Software Engineering, <lg@denx.de>
 
-obj-y	+= reset.o timer.o
+obj-y	+= reset.o
