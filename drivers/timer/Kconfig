@@ -213,4 +213,9 @@ config MTK_TIMER
 	  Select this to enable support for the timer found on
 	  MediaTek devices.
 
+config S5L_TIMER
+        bool "S5L timer support"
+        depends on TIMER
+        help
+	  Select this to enable support for timer on S5L platform.
 endmenu
